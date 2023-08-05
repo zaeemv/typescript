@@ -429,6 +429,9 @@ function sandwitch_maker(items: string[]){
 sandwitch_maker(["mayonnaise", "cheese", "sauce"])
 
 // 45
-/*function create_a_car(manufacturer: string, model_name: string, ...args: string) {
-    return args[1]
-}*/
+function create_a_car(manufacturer: string, model_name: string, ...args:string[]) {
+    return {manufacturer, model_name, args}
+}
+
+const my_car = create_a_car("Honda", "N-WGN", "color", "white", "options", "custom");
+console.log(my_car.args[3]);
