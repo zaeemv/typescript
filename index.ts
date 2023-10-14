@@ -3,11 +3,16 @@ let personName1: string = "Zaeem";
 console.log('Hello ' + personName1 + ', would you like to learn some TypeScript today?');
 
 // 3
-function toTitleCase (text: string): string{
-    return text.charAt(0).toUpperCase() + text.slice(1,text.length).toLowerCase()
+function toTitleCase(text: string): string {
+    let words = text.split(" ")
+    let titleCaseWords = []
+    for (let word of words) {
+        titleCaseWords.push(word[0].toUpperCase() + word.slice(1, word.length).toLowerCase())
+    }
+    return titleCaseWords.join(" ")
 }
 
-let personName2: string = "zaeem";
+let personName2: string = "zaeem ahmad varaich";
 console.log('Uppercase: ' + personName2.toUpperCase());
 console.log('Lowercase: ' + personName2.toLowerCase());
 console.log('Titlecase: ' + toTitleCase(personName2));
@@ -26,10 +31,10 @@ console.log("With Whitespace: " + personName3);
 console.log("Without Whitespace: " + personName3.trim());
 
 // 7 & 10
-console.log(6+2); // Addition
-console.log(16-8); // Subtraction
-console.log(4*2); // Multiplication
-console.log(64/8); // Division
+console.log(6 + 2); // Addition
+console.log(16 - 8); // Subtraction
+console.log(4 * 2); // Multiplication
+console.log(64 / 8); // Division
 
 // 9 & 10
 /* 
@@ -41,18 +46,18 @@ let favNumberMessage: string = "My Favourite Number is " + myFavNumber;
 console.log(favNumberMessage);
 
 // 11
-let friendNames = ['Waqar', 'Omer', 'Adnan', 'Moaz']; 
+let friendNames = ['Waqar', 'Omer', 'Adnan', 'Moaz'];
 for (let i in friendNames) {
     console.log(friendNames[i]);
 }
 
 // 12
 friendNames.map((friendName) => {
-    if (friendName == 'Waqar'){
+    if (friendName == 'Waqar') {
         console.log(friendName + ', how was the Table Tennis session today?');
-    } else if (friendName == 'Omer'){
+    } else if (friendName == 'Omer') {
         console.log(friendName + ', how was the office today?');
-    } else if (friendName == 'Adnan'){
+    } else if (friendName == 'Adnan') {
         console.log(friendName + ', when are you buying a new car?');
     } else {
         console.log(friendName + ', you have improved your game a lot!');
@@ -62,11 +67,11 @@ friendNames.map((friendName) => {
 // 13
 let vehicleList: Array<string> = ['car', 'bike', 'truck', 'train']
 vehicleList.map((vehicleName) => {
-    if (vehicleName == 'car'){
+    if (vehicleName == 'car') {
         console.log('I love to travel in a ' + vehicleName + '.');
-    } else if (vehicleName == 'bike'){
-        console.log(vehicleName.charAt(0).toUpperCase() + vehicleName.slice(1,vehicleName.length) + ' is a risky mode of transportation');
-    } else if (vehicleName == 'truck'){
+    } else if (vehicleName == 'bike') {
+        console.log(vehicleName.charAt(0).toUpperCase() + vehicleName.slice(1, vehicleName.length) + ' is a risky mode of transportation');
+    } else if (vehicleName == 'truck') {
         console.log('I\'d like to overtake this ' + vehicleName + '.');
     } else {
         console.log(toTitleCase(vehicleName) + ' travels at extraordinary high speeds.');
@@ -89,17 +94,17 @@ invitees.map((invitee) => {
 
 // 16
 console.log('I found a bigger dinner table and now I can invite more people! Yay!');
-invitees = ['Irfan', ...invitees] 
+invitees = ['Irfan', ...invitees]
 invitees = [...invitees, 'Farooq']
-invitees.splice(invitees.length/2, 0, 'Danyal')
+invitees.splice(invitees.length / 2, 0, 'Danyal')
 invitees.map((invitee) => {
     console.log(invitee + ', you are cordially invited to the dinner today!');
 });
 
 // 17
 console.log('A sad news... The table seems to not arrive in time, so I can only invite two guests now');
-let totalInvitees:number = invitees.length;
-for (let i=0; i<totalInvitees-2; i++) {
+let totalInvitees: number = invitees.length;
+for (let i = 0; i < totalInvitees - 2; i++) {
     console.log(invitees.pop() + ', sorry for I regret to invite you to the dinner!');
 }
 invitees.map((invitee) => {
@@ -112,7 +117,7 @@ console.log(invitees.length + ' items left in the invitees list.')
 
 // 18
 console.log('\nOriginal List:')
-let travelLocations:Array<string> = ['Makkah', 'Tokyo', 'UK', 'Switzerland', 'Finland']
+let travelLocations: Array<string> = ['Makkah', 'Tokyo', 'UK', 'Switzerland', 'Finland']
 travelLocations.map((locationName) => {
     console.log(locationName);
 });
@@ -171,11 +176,11 @@ let languages: string[] = ['Arabic', 'Urdu', 'English', 'Japanese']
 const Person = {
     name: "Zaeem",
     age: 33,
-    preferredLanguages : languages
+    preferredLanguages: languages
 }
 
 // 22
-console.log (languages[5])
+console.log(languages[5])
 
 // 23
 let car = 'subaru';
@@ -228,16 +233,16 @@ console.log(!testArray.includes(3));
 
 // 25
 let alien_color1: string = "green"
-if (alien_color1 == 'green'){
+if (alien_color1 == 'green') {
     console.log("You earned 5 points!")
 }
-if (alien_color1 == 'yellow'){
+if (alien_color1 == 'yellow') {
     console.log("")
 }
 
 //26
 let alien_color2: string = "red"
-if (alien_color2 == 'green'){
+if (alien_color2 == 'green') {
     console.log("You earned 5 points for shooting the alien!")
 }
 else {
@@ -245,7 +250,7 @@ else {
 }
 
 alien_color2 = 'green'
-if (alien_color2 == 'green'){
+if (alien_color2 == 'green') {
     console.log("You earned 5 points for shooting the alien!")
 }
 else {
@@ -254,7 +259,7 @@ else {
 
 // 27
 let alien_color3 = 'red'
-if (alien_color3 == 'green'){
+if (alien_color3 == 'green') {
     console.log("You earned 5 points!")
 }
 else if (alien_color3 == 'yellow') {
@@ -268,51 +273,51 @@ else if (alien_color3 == 'red') {
 let age: number = 33;
 if (age < 2) {
     console.log("Baby");
-} else if (age >= 2 && age < 4){
+} else if (age >= 2 && age < 4) {
     console.log("Toddler");
-} else if (age >= 4 && age < 13){
+} else if (age >= 4 && age < 13) {
     console.log("Kid");
-} else if (age >= 13 && age < 20){
+} else if (age >= 13 && age < 20) {
     console.log("Teenager");
-} else if (age >= 20 && age < 65){
+} else if (age >= 20 && age < 65) {
     console.log("Adult");
-} else if (age >= 65){
+} else if (age >= 65) {
     console.log("Elder");
 }
 
 // 29
 let favourite_fruits: Array<string> = ["orange", "mango", "banana"]
-if (favourite_fruits.includes("banana")){
+if (favourite_fruits.includes("banana")) {
     console.log("You really like bananas!")
 }
-if (favourite_fruits.includes("mango")){
+if (favourite_fruits.includes("mango")) {
     console.log("You really like mangoes!")
 }
-if (favourite_fruits.includes("orange")){
+if (favourite_fruits.includes("orange")) {
     console.log("You really like oranges!")
 }
-if (favourite_fruits.includes("guava")){
+if (favourite_fruits.includes("guava")) {
     console.log("You really like guavas!")
 }
-if (favourite_fruits.includes("watermelon")){
+if (favourite_fruits.includes("watermelon")) {
     console.log("You really like watermelons!")
 }
 
 // 30
 let usernames = ['zaeem', 'admin', 'adnan', 'omer', 'ishtiaq']
 usernames.map((user) => {
-    if (user == 'admin'){
+    if (user == 'admin') {
         console.log('Hello admin, would you like to see a status report?');
     } else {
         console.log('Hello ' + toTitleCase(user) + ', thank you for logging in again.');
-    } 
+    }
 });
 
 // 31
 while (usernames.length > 0) {
     usernames.pop();
 }
-if (usernames.length == 0){
+if (usernames.length == 0) {
     console.log("We need to find some users!")
 }
 
@@ -320,7 +325,7 @@ if (usernames.length == 0){
 let current_users = ['zaeem', 'arsalan', 'ADNAN', 'omer', 'ishtiaq']
 current_users = current_users.map((cUser) =>
     cUser.toLowerCase())
-let new_users = ['danyal', 'zaheer','adnan','ibrahim']
+let new_users = ['danyal', 'zaheer', 'adnan', 'ibrahim']
 new_users.map((user) => {
     if (!current_users.includes(user.toLowerCase())) {
         console.log(user + " is available!")
@@ -331,7 +336,7 @@ new_users.map((user) => {
 )
 
 // 33
-let numbers_one_to_ten = [1,2,3,4,5,6,7,8,9,10]
+let numbers_one_to_ten = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 numbers_one_to_ten.forEach((num) => {
     if (num == 1) console.log(`${num}st`)
     else if (num == 2) console.log(`${num}nd`)
@@ -383,8 +388,8 @@ city_country("Ankara", "Turkey")
 city_country("Makkah", "Saudi Arabia")
 
 // 40
-function make_album (artistName: string, albumTitle: string, noOfTracks?: number) {
-    return {artistName: artistName, albumTitle: albumTitle, noOfTracks: noOfTracks}
+function make_album(artistName: string, albumTitle: string, noOfTracks?: number) {
+    return { artistName: artistName, albumTitle: albumTitle, noOfTracks: noOfTracks }
 }
 
 let object1 = make_album("X", "Y")
@@ -398,14 +403,14 @@ console.log(object2.noOfTracks);
 
 // 41
 let magicians = ["Harry", "Tom", "Ryu"]
-function show_magicians(magicians: string[]){
+function show_magicians(magicians: string[]) {
     console.log(magicians);
 }
 show_magicians(magicians);
 
 // 42
-function make_great(magicians: string[]){
-    for (let i = 0; i < magicians.length; i++) 
+function make_great(magicians: string[]) {
+    for (let i = 0; i < magicians.length; i++)
         magicians[i] = "Great " + magicians[i]
 }
 make_great(magicians);
@@ -419,9 +424,9 @@ show_magicians(magicians_copy);
 show_magicians(magicians);
 
 // 44   
-function sandwitch_maker(items: string[]){
+function sandwitch_maker(items: string[]) {
     let items_list: string = ""
-    for (let i = 0; i < items.length; i++) 
+    for (let i = 0; i < items.length; i++)
         if (i < items.length - 1) items_list = items_list + items[i] + ", "
         else items_list = items_list + " & " + items[i]
     console.log("The sandwitch contains " + items_list)
@@ -429,9 +434,9 @@ function sandwitch_maker(items: string[]){
 sandwitch_maker(["mayonnaise", "cheese", "sauce"])
 
 // 45
-function create_a_car(manufacturer: string, model_name: string, ...args:string[]) {
-    return {manufacturer, model_name, args}
+function create_a_car(manufacturer: string, model_name: string, ...keyword: { name: string, value: string }[]) {
+    return { manufacturer, model_name, keyword }
 }
 
-const my_car = create_a_car("Honda", "N-WGN", "color", "white", "options", "custom");
-console.log(my_car.args[3]);
+const my_car = create_a_car("Honda", "N-WGN", { name: 'color', value: 'white' }, { name: 'options', value: 'custom' });
+console.log(my_car);
